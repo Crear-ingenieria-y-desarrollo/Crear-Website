@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import AboutSection from '../components/AboutSection.astro';
+
+const services = [
+  {
+    title: 'Consultoría Territorial',
+    description: 'Planificación estratégica para el uso sostenible del territorio y la gestión efectiva de recursos naturales.',
+    image: '/services/territorial.jpg',
+    items: [
+      "Diseño de planes de ordenamiento territorial",
+      "Análisis y evaluación de riesgos y amenazas naturales",
+      "Estudio y diagnóstico de la situación actual del territorio",
+      "Elaboración de estrategias para optimizar la gestión territorial"
+    ]
+  },
+  {
+    title: 'Consultoría Ambiental',
+    description: 'Implementación de soluciones para mitigar el impacto ambiental y promover la sostenibilidad.',
+    image: '/services/environmental.jpg',
+    items: [
+      "Elaboración de planes de ahorro y uso eficiente del agua",
+      "Diseño de estrategias para el manejo y tratamiento de vertimientos",
+      "Gestión integral de residuos sólidos y programas de reciclaje",
+      "Evaluación ambiental de proyectos y actividades productivas"
+    ]
+  },
+  {
+    title: 'Consultoría en Sistemas de Información Geográfica',
+    description: 'Soluciones avanzadas en SIG para optimizar la toma de decisiones basadas en datos espaciales.',
+    image: '/services/gis.jpg',
+    items: [
+      "Diseño y creación de mapas y visualizaciones geográficas",
+      "Análisis geoespacial y modelamiento territorial",
+      "Implementación de sistemas de información geográfica (SIG)",
+      "Gestión y estructuración de bases de datos geográficas"
+    ]
+  },
+  {
+    title: 'Estudios Específicos',
+    description: 'Investigaciones técnicas especializadas para el desarrollo de proyectos de ingeniería.',
+    image: '/services/studies.jpg',
+    items: [
+      "Estudios geológicos y caracterización de suelos",
+      "Análisis geomorfológico para proyectos de infraestructura",
+      "Evaluaciones hidrológicas para gestión hídrica",
+      "Investigaciones hidrogeológicas y modelamiento de acuíferos",
+      "Estudios geotécnicos para diseño y construcción"
+    ]
+  },
+  {
+    title: 'Desarrollo de Software para Ingeniería',
+    description: 'Soluciones tecnológicas personalizadas para potenciar la productividad y resolver retos técnicos.',
+    image: '/services/software.jpg',
+    items: [
+      "Desarrollo de aplicaciones web funcionales e intuitivas",
+      "Creación de software para dispositivos móviles y sistemas de escritorio",
+      "Integración de herramientas tecnológicas para optimización de procesos"
+    ]
+  },
+  {
+    title: 'Fotogrametría y Drones',
+    description: 'Captura de datos aéreos de alta precisión para análisis espacial y generación de modelos 3D.',
+    image: '/services/drone.jpg',
+    items: [
+      "Obtención de imágenes aéreas de alta resolución con drones",
+      "Procesamiento avanzado y análisis de datos fotogramétricos",
+      "Desarrollo de modelos tridimensionales para proyectos de ingeniería"
+    ]
+  }
+];
+
+---
+
+<Layout title="CREAR - Soluciones en ingeniería y desarrollo">
+	<main>
+		<HeroSlider />
+
+		<!-- Welcome Section -->
+		<div class="py-16 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			  <div class="text-center max-w-4xl mx-auto">
+				<!-- Título con animación de rebote -->
+				<h2 class="text-4xl font-bold text-primary mb-6">
+				  Bienvenidos a CREAR
+				</h2>
+		  
+				Somos una empresa especializada en el desarrollo y venta de software y servicios de consultoría para la industria de la ingeniería.
+        Nuestro objetivo principal es ofrecer soluciones innovadoras y eficientes que impulsen el crecimiento y el éxito de nuestros clientes.
+        Descubre cómo podemos ayudarte a alcanzar tus metas en el campo de la ingeniería.
+			  </div>
+			</div>
+		</div>
+		  
+
+		<!-- Services Preview -->
+		<div class="py-16 bg-gradient-to-b from-gray-50 to-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			  <div class="text-center mb-12">
+				<h2>
+				  Nuestros Servicios
+				</h2>
+				<div class="mt-4 h-1 w-24 bg-gradient-to-r from-primary to-primary-dark mx-auto rounded-full"></div>
+			  </div>
+			  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+				{services.map(service => (
+				  <ServiceCard {...service} />
+				))}
+			  </div>
+			</div>
+		</div>		  
+
+		<AboutSection />
+
+		<!-- CTA Section -->
+		<div class="bg-gradient-to-r from-primary to-primary-dark">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
+				<h2 class="text-3xl font-bold mb-8 text-white">¿Listo para impulsar tu proyecto?</h2>
+				<p class="text-xl text-white/90 mb-8">Contáctanos hoy y descubre cómo podemos ayudarte.</p>
+				<a
+					href="/contacto"
+					class="bg-white text-primary px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors inline-flex items-center group"
+				>
+					Contactar Ahora
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5 ml-2 transform transition-transform group-hover:translate-x-1"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</main>
+</Layout>

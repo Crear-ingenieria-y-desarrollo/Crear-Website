@@ -1,0 +1,29 @@
+---
+const sections = [
+  {
+    title: 'Nosotros',
+    content: 'CREAR es una empresa líder en soluciones de ingeniería y desarrollo, comprometida con la innovación y la excelencia. Con años de experiencia en el sector, nos especializamos en proporcionar servicios integrales que combinan conocimiento técnico con las últimas tecnologías.'
+  },
+  {
+    title: 'Misión',
+    content: 'Nuestra misión es proporcionar soluciones innovadoras y sostenibles que impulsen el desarrollo y crecimiento de nuestros clientes, contribuyendo al progreso tecnológico y la eficiencia en la gestión de recursos.'
+  },
+  {
+    title: 'Visión',
+    content: 'Ser reconocidos como líderes globales en soluciones de ingeniería y desarrollo, estableciendo nuevos estándares de excelencia e innovación en la industria, mientras mantenemos nuestro compromiso con la sostenibilidad y el desarrollo responsable.'
+  }
+];
+---
+
+<div class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8">
+      {sections.map(section => (
+        <div class="bg-white p-8 rounded-lg shadow-md transform transition duration-300 hover:-translate-y-2">
+          <h2 class="text-2xl font-bold text-primary mb-4">{section.title}</h2>
+          <p class="text-gray-600">{section.content}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
